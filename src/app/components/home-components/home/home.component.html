@@ -22,7 +22,7 @@
   
 
 <div class="pagination">
-  <button (click)="PreviousPage()" class="button">Anterior</button>
+  <button (click)="PreviousPage()" [ngClass]="{'primera-pagina': numberPage === 1}" class="button">Anterior</button>
   <h3>{{ numberPage }}</h3>
   <button (click)="nextPage()" class="button">Siguiente</button>
 </div>
@@ -42,9 +42,8 @@
   </div>
 
   <div class="pagination">
-    <button (click)="PreviousPage()" class="button">Anterior</button>
-    <h3>{{ numberPage }}</h3>
-    <button (click)="nextPage()" class="button">Siguiente</button>
-  </div>
-
+  <button (click)="PreviousPage()" [ngClass]="{'primera-pagina': numberPage === 1}" class="button">Anterior</button>
+  <h3>{{ numberPage }}</h3>
+  <button (click)="nextPage()" class="button">Siguiente</button>
+</div>
   <app-footer></app-footer>
