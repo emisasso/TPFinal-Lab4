@@ -1,6 +1,5 @@
 import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginComponent } from 'src/app/components/login/login.component';
 import { AuthServiceService } from 'src/app/core/services/auth-service.service';
 
 @Component({

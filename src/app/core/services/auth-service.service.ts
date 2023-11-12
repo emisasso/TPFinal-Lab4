@@ -9,7 +9,7 @@ import { ApiService } from './api.service';
 })
 export class AuthServiceService {
 
-  variableCompartida: boolean=false;
+  variableCompartida: boolean | undefined;
 
   setVariable(valor: any){
     this.variableCompartida= valor;
