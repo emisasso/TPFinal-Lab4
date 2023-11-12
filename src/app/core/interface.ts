@@ -1,4 +1,4 @@
-export interface MoviesResponse {
+export interface IMoviesResponse {
   page:          number;
   results:       IMovie[];
   total_pages:   number;

@@ -1,4 +1,4 @@
-import { IMovie, IUser, MediaType, OriginalLanguage } from "./interface";
+import { IMovie, IUser, MediaType, OriginalLanguage, IMoviesResponse } from "./interface";
 
 export class Movie implements IMovie{
     
@@ -55,7 +55,19 @@ export class Movie implements IMovie{
         this.movies = results == undefined ? [] : results.movies;
     }
   }*/
-
+  export class MovieResponse implements IMoviesResponse
+  {
+    page: number;
+    results:       IMovie[];
+    total_pages:   number;
+    total_results: number;
+ 
+  constructor(movieResponse?: any) {
+    this.page = movieResponse == undefined ? '' : movieResponse.page;
+    this.results = movieResponse?.results || movieResponse.results;
+    this.total_pages = movieResponse?.total_pages || movieResponse.total_pages;
+    this.total_results = movieResponse?.total_results || movieResponse.total_results;
+  } }
   export class User implements IUser{
     id: number| null= null;
     email: string = '';
