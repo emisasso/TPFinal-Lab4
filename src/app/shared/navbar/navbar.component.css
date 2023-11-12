@@ -1,0 +1,50 @@
+nav {
+    background-image: url(../../../assets/fondo-2.jpg);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: hsl(0, 0%, 13%);
+    padding: 5px;
+    height: 80px;
+}
+
+.login-reg{
+    list-style-type: none;
+    float: right;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+img {
+    display: block;
+    width: 50%;;
+    max-width: 160px;
+}
+
+.logo-titulo{
+    margin-top: -4px;
+    list-style: none;
+    display: flex;
+    align-items: left;
+}
+
+.hiperVinculo{
+    cursor: pointer;
+}

@@ -1,0 +1,9 @@
+div{
+    margin: 0;
+    padding: 0;
+    background-image: url('../../../assets/sala-cine.jpg'); /* Reemplaza 'ruta-de-tu-imagen.jpg' con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+  }

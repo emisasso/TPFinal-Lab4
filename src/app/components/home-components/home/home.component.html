@@ -1,0 +1,13 @@
+<app-navbar></app-navbar>
+<div *ngFor="let movie of movies" class="movie-card">
+    <div class="movie-poster">
+      <img [src]= "'https://image.tmdb.org/t/p/w500'+ movie.poster_path" alt="{{ movie.title }} Poster" />
+    </div>
+    <div class="movie-details">
+      <h2>{{ movie.title }}</h2>
+      <p class="overview">{{ movie.overview }}</p>
+      <p><strong>Release Date:</strong> {{ movie.release_date }}</p>
+      <p><strong>Vote Average:</strong> {{ movie.vote_average }}</p>
+      <p><strong>Vote Count:</strong> {{ movie.vote_count }}</p>
+    </div>
+  </div>
