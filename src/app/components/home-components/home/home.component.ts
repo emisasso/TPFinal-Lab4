@@ -43,16 +43,10 @@ nextPage(): void{
   this.numberPage = this.numberPage +1;
   this.getMoviesxGenre(this.numberPage,this.idGenre)
 }
+
 PreviousPage(): void{
   if(this.numberPage>1){
   this.numberPage = this.numberPage - 1;
   this.getMoviesxGenre(this.numberPage,this.idGenre)
-
+}}
 }
-}
-
-<<<<<<< HEAD
-}
-=======
-}
->>>>>>> 288b66506a3004e4f6999df1a3b452ace52be2ac

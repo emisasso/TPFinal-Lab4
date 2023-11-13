@@ -57,10 +57,6 @@
   h3 {
     font-size: 24px;
     margin: 0;
-<<<<<<< HEAD
-=======
-    color: #3498db;
->>>>>>> 288b66506a3004e4f6999df1a3b452ace52be2ac
   }
 
   .buttons {
@@ -82,25 +78,9 @@
     color: #fff; /* Color del texto para resaltar */
   }
   .genre-buttons {
-<<<<<<< HEAD
-=======
-    margin-left: 50px;
->>>>>>> 288b66506a3004e4f6999df1a3b452ace52be2ac
     margin-top: 0; /* Ajusta el valor según el tamaño de tu navbar */
   }
 
   .container {
-<<<<<<< HEAD
     background-color: #000;
 }
-=======
-    background-color: #000;
-    padding-top: 100px;
-    padding-bottom: 80px;
-  }  
-  .primera-pagina {
-    background-color: #666;
-    color: #fff;
-  }
-  
->>>>>>> 288b66506a3004e4f6999df1a3b452ace52be2ac

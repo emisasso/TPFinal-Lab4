@@ -54,17 +54,17 @@ export class ApiService {
     return this.http.post<boolean>(url, createPerson);
   }*/
 
-  editPerson(id: number, updatePerson: Movie): Observable<boolean> {
+  /*editPerson(id: number, updatePerson: Movie): Observable<boolean> {
     const url = ${this.baseURL}/persons/${id};
     return this.http.put<boolean>(url, updatePerson);
-  }
+  }*/
 
- /* deleteMovieToFavorite(id: number): Observable<boolean> {
-    return this.http.delete(`${this.baseURL}/persons/${id}`)
+  /*deleteMovieToFavorite(id: number): Observable<boolean> {
+    return this.http.delete(`${this.baseUrl}/persons/${id}`)
     .pipe(
       map(resp => true), // Si sale bien retorna true. Recibir un response significa que salio bien
       catchError(error => of(false)) // Si hay algun error en la solicitud me regresa falso
     );
-  }*/
-  
+  }
+  */
 }
