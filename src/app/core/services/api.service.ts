@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, catchError, map, of } from 'rxjs';
 import { Movie, MovieResponse, User } from '../models';
-import { IMovie, MoviesResponse } from '../interface';
+
 
 
 
@@ -20,13 +20,9 @@ export class ApiService {
   private genero:string = "&with_genres=";
   private page: string = "&page=";
 
-
   constructor(private http: HttpClient) { }
 
-  /*getData(): Observable<Results>{
-    return this.http.get<Results>(`${this.baseURL}`);
-  }*/
-
+ 
   //Metodos de Usuarios
   getUsers(): Observable<User[]>{
     return this.http.get<User[]>(`${this.jsonURL}/users`);
@@ -52,22 +48,23 @@ export class ApiService {
       map((res) => res.results)
     );
   }
-  /*
-  addMovieToFavorite(createPerson: Movie): Observable<boolean> {
-    const url = ${this.baseURL}/persons;
+
+  /*addMovieToFavorite(createPerson: Movie): Observable<boolean> {
+    const url = `${this.baseURL}/persons`;
     return this.http.post<boolean>(url, createPerson);
-  }
+  }*/
 
   editPerson(id: number, updatePerson: Movie): Observable<boolean> {
     const url = ${this.baseURL}/persons/${id};
     return this.http.put<boolean>(url, updatePerson);
   }
 
-  deleteMovieToFavorite(id: number): Observable<boolean> {
-    return this.http.delete(${this.baseURL}/persons/${id})
+ /* deleteMovieToFavorite(id: number): Observable<boolean> {
+    return this.http.delete(`${this.baseURL}/persons/${id}`)
     .pipe(
       map(resp => true), // Si sale bien retorna true. Recibir un response significa que salio bien
       catchError(error => of(false)) // Si hay algun error en la solicitud me regresa falso
-   );
+    );
   }*/
+  
 }

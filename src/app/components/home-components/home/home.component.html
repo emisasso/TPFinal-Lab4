@@ -22,6 +22,35 @@
   
 
 <div class="pagination">
+  <button (click)="PreviousPage()" [ngClass]="{'primera-pagina': numberPage === 1}" class="button">Anterior</button>
+  <h3>{{ numberPage }}</h3>
+  <button (click)="nextPage()" class="button">Siguiente</button>
+</div>
+
+
+<div class="container">
+<div class="genre-buttons">
+  <button (click)="getMoviesxGenre(numberPage, '35')" [ngClass]="{ 'button-selected': genreSeleccionado === '35' }" class="button">Comedia</button>
+  <button (click)="getMoviesxGenre(numberPage, '12')" [ngClass]="{ 'button-selected': genreSeleccionado === '12' }" class="button">Aventura</button>
+  <button (click)="getMoviesxGenre(numberPage, '28')" [ngClass]="{ 'button-selected': genreSeleccionado === '28' }" class="button">Acción</button>
+  <button (click)="getMoviesxGenre(numberPage, '16')" [ngClass]="{ 'button-selected': genreSeleccionado === '16' }" class="button">Animación</button>
+  <button (click)="getMoviesxGenre(numberPage, '80')" [ngClass]="{ 'button-selected': genreSeleccionado === '80' }" class="button">Crimen</button>
+  <button (click)="getMoviesxGenre(numberPage, '53')" [ngClass]="{ 'button-selected': genreSeleccionado === '53' }" class="button">Suspenso</button>
+  <button (click)="getMoviesxGenre(numberPage, '27')" [ngClass]="{ 'button-selected': genreSeleccionado === '27' }" class="button">Terror</button>
+  <button (click)="getMoviesxGenre(numberPage, '18')" [ngClass]="{ 'button-selected': genreSeleccionado === '18' }" class="button">Drama</button>
+  <button (click)="getMoviesxGenre(numberPage, '14')" [ngClass]="{ 'button-selected': genreSeleccionado === '14' }" class="button">Fantasía</button>
+  <button (click)="getMoviesxGenre(numberPage, '9648')" [ngClass]="{ 'button-selected': genreSeleccionado === '9648' }" class="button">Misterio</button>
+  <button (click)="getMoviesxGenre(numberPage, '10749')" [ngClass]="{ 'button-selected': genreSeleccionado === '10749' }" class="button">Romance</button>
+  <button (click)="getMoviesxGenre(numberPage, '10752')" [ngClass]="{ 'button-selected': genreSeleccionado === '10752' }" class="button">Guerra</button>
+  <button (click)="getMoviesxGenre(numberPage, '878')" [ngClass]="{ 'button-selected': genreSeleccionado === '878' }" class="button">Ciencia ficción</button>
+  <button (click)="getMoviesxGenre(numberPage, '37')" [ngClass]="{ 'button-selected': genreSeleccionado === '37' }" class="button">Lejano Oeste</button>
+  <button (click)="getMoviesxGenre(numberPage, '10402')" [ngClass]="{ 'button-selected': genreSeleccionado === '10402' }" class="button">Música</button>
+  <button (click)="getMoviesxGenre(numberPage, '10770')" [ngClass]="{ 'button-selected': genreSeleccionado === '10770' }" class="button">TV</button>
+</div>
+
+  
+
+<div class="pagination">
   <button (click)="PreviousPage()" class="button">Anterior</button>
   <h3>{{ numberPage }}</h3>
   <button (click)="nextPage()" class="button">Siguiente</button>
@@ -35,6 +64,18 @@
     <div class="movie-details">
       <h2>{{ movie.title }}</h2>
       <p class="overview">{{ movie.overview }}</p>
+      <p><strong>Fecha de estreno:</strong> {{ movie.release_date }}</p>
+      <p><strong>Puntuacion:</strong> {{ movie.vote_average }}</p>
+      <p><strong>Cantidad de votos:</strong> {{ movie.vote_count }}</p>
+    </div>
+  </div>
+
+  <div class="pagination">
+  <button (click)="PreviousPage()" [ngClass]="{'primera-pagina': numberPage === 1}" class="button">Anterior</button>
+  <h3>{{ numberPage }}</h3>
+  <button (click)="nextPage()" class="button">Siguiente</button>
+</div>
+  <app-footer></app-footer>
       <p><strong>Fecha de estreno:</strong> {{ movie.release_date }}</p>
       <p><strong>Puntuacion:</strong> {{ movie.vote_average }}</p>
       <p><strong>Cantidad de votos:</strong> {{ movie.vote_count }}</p>

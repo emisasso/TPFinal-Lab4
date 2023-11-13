@@ -61,7 +61,27 @@ export class Movie implements IMovie{
   } 
 }
 
+<<<<<<< HEAD
 
+=======
+    constructor(results?:any){
+        this.movies = results == undefined ? [] : results.movies;
+    }
+  }*/
+  export class MovieResponse implements IMoviesResponse
+  {
+    page: number;
+    results:       IMovie[];
+    total_pages:   number;
+    total_results: number;
+ 
+  constructor(movieResponse?: any) {
+    this.page = movieResponse == undefined ? '' : movieResponse.page;
+    this.results = movieResponse?.results || movieResponse.results;
+    this.total_pages = movieResponse?.total_pages || movieResponse.total_pages;
+    this.total_results = movieResponse?.total_results || movieResponse.total_results;
+  } }
+>>>>>>> 288b66506a3004e4f6999df1a3b452ace52be2ac
   export class User implements IUser{
     id: number| null= null;
     email: string = '';

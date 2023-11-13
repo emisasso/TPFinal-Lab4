@@ -51,4 +51,8 @@ PreviousPage(): void{
 }
 }
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 288b66506a3004e4f6999df1a3b452ace52be2ac
