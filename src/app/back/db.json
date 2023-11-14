@@ -1,5 +1,5 @@
 {
-"users": [
+  "users": [
     {
       "id": 1,
       "userName": "admin",
@@ -23,6 +23,20 @@
       "email": "user",
       "password": "1234",
       "id": 4
+    },
+    {
+      "userName": "emi",
+      "email": "emi@hotmail.com",
+      "password": "emmi1234",
+      "active": true,
+      "id": 5
+    },
+    {
+      "userName": "emi",
+      "email": "adrian@hotmail.com",
+      "password": "12345678",
+      "active": true,
+      "id": 6
     }
   ]
 }

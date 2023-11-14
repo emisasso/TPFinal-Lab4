@@ -21,7 +21,7 @@ export class AuthServiceService {
 
   constructor(private apiService: ApiService) { }
 
-  public async checkAuth(email:string, password: string): Promise<boolean>{
+  /*public async checkAuth(email:string, password: string): Promise<boolean>{
 
     let users: User[] = [];
 
@@ -36,9 +36,8 @@ export class AuthServiceService {
     }
 
     return users.length == 1;
-  }
+  }*/
 
-  //---------------------------
   private user: User | null | undefined = null;
 
   get currentUser(): User | undefined {

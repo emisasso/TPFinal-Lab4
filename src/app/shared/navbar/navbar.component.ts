@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthServiceService } from 'src/app/core/services/auth-service.service';
 
@@ -7,7 +7,12 @@ import { AuthServiceService } from 'src/app/core/services/auth-service.service';
   templateUrl: './navbar.component.html',
   styleUrls: ['./navbar.component.css']
 })
-export class NavbarComponent {
+export class NavbarComponent implements OnInit{
+
+  @Input() isUser: boolean = false;
+
+  ngOnInit(): void {
+  }
 
   valorCompartido: boolean | undefined;
 
@@ -24,6 +29,14 @@ export class NavbarComponent {
 
     this.router.navigate(['/register']);
   }
- 
+
+  public logout() {
+    this.authService.logout();
+    this.router.navigate(['']);
+  }
+
+  public goToUserPage(){
+    this.router.navigate(['/user'])
+  }
 
 }

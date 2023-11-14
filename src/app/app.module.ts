@@ -8,7 +8,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponentComponent } from './components/home-components/home/home.component';
 import { LandingComponent } from './components/landing/landing.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { UserPageComponent } from './components/home-components/user-page/user-page.component';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { FormsModule } from '@angular/forms';
     HomeComponentComponent,
     LandingComponent,
     RegisterComponent,
+    UserPageComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

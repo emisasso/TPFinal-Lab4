@@ -20,7 +20,9 @@ export class ApiService {
   private genero:string = "&with_genres=";
   private page: string = "&page=";
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { 
+    
+  }
 
  
   //Metodos de Usuarios
@@ -49,17 +51,19 @@ export class ApiService {
     );
   }
 
-  /*addMovieToFavorite(createPerson: Movie): Observable<boolean> {
+  //Metodos de modificacion de usuarios
+  /*
+  addMovieToFavorite(createPerson: Movie): Observable<boolean> {
     const url = `${this.baseURL}/persons`;
     return this.http.post<boolean>(url, createPerson);
-  }*/
+  }
 
-  /*editPerson(id: number, updatePerson: Movie): Observable<boolean> {
+  editPerson(id: number, updatePerson: Movie): Observable<boolean> {
     const url = ${this.baseURL}/persons/${id};
     return this.http.put<boolean>(url, updatePerson);
-  }*/
+  }
 
-  /*deleteMovieToFavorite(id: number): Observable<boolean> {
+  deleteMovieToFavorite(id: number): Observable<boolean> {
     return this.http.delete(`${this.baseUrl}/persons/${id}`)
     .pipe(
       map(resp => true), // Si sale bien retorna true. Recibir un response significa que salio bien

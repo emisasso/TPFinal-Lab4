@@ -1,3 +1,5 @@
+import { Movie } from "./models";
+
 export interface MoviesResponse {
   page:          number;
   results:       IMovie[];
@@ -41,22 +43,9 @@ export enum OriginalLanguage {
 
 export interface IUser{
   id: number | null;
+  userName: string;
   email: string;
   password: string;
+  active: boolean;
+  favorites: IMovie[];
 }
-
-
-/*export interface IMovie{
-    title: string | null,
-    overview: string | null,
-    poster_path: string | null,
-    release_date: string | null,
-    vote_average: string | null,
-    vote_count: string | null
-  }
-  
-  export interface IResults{
-    movies: IMovie[] | null ;
-  }
-  
-  */

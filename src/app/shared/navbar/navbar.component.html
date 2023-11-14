@@ -1,8 +1,9 @@
-<nav class="noLogin" *ngIf="!valorCompartido">
+<nav  *ngIf="!isUser" class="noLogin">
 
         <ul class="login-reg">
             <li><a class="hiperVinculo" (click)="goToLogin()">Login</a></li>
             <li><a class="hiperVinculo" (click)="goToRegister()">Register</a></li>
+            <li><a class="hiperVinculo" (click)="logout()">Logout</a></li>
         </ul>
     
         <ul class="logo-titulo">
@@ -15,12 +16,12 @@
         </ul>
 </nav>
 
-<nav class="Login" *ngIf="valorCompartido">
+<nav *ngIf="isUser" class="Login">
         <ul class="login-reg">
+            <li><a class="hiperVinculo" (click)="logout()">Logout</a></li>
             <li><a href="#">Películas</a></li>
             <li><a href="#">Series</a></li>
             <li><a href="#">Contacto</a></li>
-            <li><a href="#">LogOut</a></li>
         </ul>
     <ul class="logo-titulo">
         <li>

@@ -3,13 +3,13 @@
   padding-top: 110px;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ajusta la altura según tus necesidades */
+  height: 100vh;
   background-image: url('../../../assets/sala-cine.jpg');
   margin: 0;
 }
 
 img {
-  max-width: 100%; /* Ajusta el tamaño máximo de la imagen al contenedor */
+  max-width: 100%; 
   max-height: 100%;
-  border-radius: 8px; /* Añade esquinas redondeadas si lo deseas */
+  border-radius: 8px;
 }

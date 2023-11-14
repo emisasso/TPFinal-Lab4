@@ -49,8 +49,8 @@ export class Movie implements IMovie{
   
   export class MovieResponse implements MoviesResponse{
     page: number;
-    results:       IMovie[];
-    total_pages:   number;
+    results: IMovie[];
+    total_pages: number;
     total_results: number;
  
   constructor(movieResponse?: any) {
@@ -61,15 +61,22 @@ export class Movie implements IMovie{
   } 
 }
 
-  export class User implements IUser{
-    id: number| null= null;
+export class User implements IUser{
+  id: number| null= null;
+    userName: string = '';
     email: string = '';
     password: string = '';
-  
-    constructor(user?:any){
-      this.id =  user == undefined ? null : user.id;
-      this.email = user == undefined ? '' : user.email;
-      this.password = user == undefined ? '' : user.password;
-    }
-  }
+    active: boolean = true;
+    favorites: IMovie[];
+
+
+  constructor(user?:any){
+    this.id = user == undefined ? null : user.id;
+    this.userName = user == undefined ? '' : user.userName;
+    this.email = user == undefined ? '' : user.email;
+    this.password = user == undefined ? '' : user.password;
+    this.active = user == undefined ? false : user.active;
+    this.favorites = user == undefined ? undefined : user.favorites;
+  }
+}
 

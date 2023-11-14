@@ -65,7 +65,7 @@
     align-items: center;
     flex-wrap: wrap;
     gap: 10px;
-    margin: 20px 0;
+    margin-bottom: 10px;
   }
   
   
@@ -78,9 +78,16 @@
     color: #fff; /* Color del texto para resaltar */
   }
   .genre-buttons {
-    margin-top: 0; /* Ajusta el valor según el tamaño de tu navbar */
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .genre-buttons button{
+    margin-top: 10px;
   }
 
   .container {
-    background-color:#da5252;
+    margin-top: 90px;
+    background-image: url(../../../../assets/popcorn.jpg);
+    background-repeat: repeat;
 }
