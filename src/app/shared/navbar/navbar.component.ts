@@ -1,5 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
+import { User } from 'src/app/core/models';
+import { ApiService } from 'src/app/core/services/api.service';
 import { AuthServiceService } from 'src/app/core/services/auth-service.service';
 
 @Component({
@@ -9,24 +11,33 @@ import { AuthServiceService } from 'src/app/core/services/auth-service.service';
 })
 export class NavbarComponent implements OnInit{
 
-  @Input() isUser: boolean = false;
+  isLoggedIn: boolean | undefined;
+  userLogedId: string | null = '';
+  userLoged: User = new User();
+  showElement: boolean = true;
 
-  ngOnInit(): void {
+  constructor(private authService: AuthServiceService, private router: Router, private apiService: ApiService){ 
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.showElement = !this.router.url.includes('/user');
+      }
+    });
   }
 
-  valorCompartido: boolean | undefined;
-
-  constructor(private authService: AuthServiceService, private router: Router){
-    this.valorCompartido= this.authService.getVariable();
+  ngOnInit() {
+    this.authService.authStatus.subscribe((loggedIn) => {
+      this.isLoggedIn = loggedIn;
+    });
+    let authLocalStore: string | null = localStorage.getItem('token');
+    this.userLogedId = this.apiService.localStoreNull(authLocalStore);
+    this.getLogedUserNavbar(this.userLogedId);
   }
 
   public goToLogin(){
-
     this.router.navigate(['/login']);
   }
 
   public goToRegister(){
-
     this.router.navigate(['/register']);
   }
 
@@ -39,4 +50,13 @@ export class NavbarComponent implements OnInit{
     this.router.navigate(['/user'])
   }
 
+  public goToFavorites(){
+    this.router.navigate(['/user/favorites'])
+  }
+
+  getLogedUserNavbar(id: string | null){
+    this.apiService.getUserToAuthById(id).subscribe((resp) => {
+      this.userLoged = resp[0];
+    })
+  }
 }

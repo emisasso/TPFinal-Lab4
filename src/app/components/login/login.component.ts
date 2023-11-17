@@ -11,6 +11,10 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 })
 export class LoginComponent {
 
+  constructor(private fb: FormBuilder, private authService: AuthServiceService, private router: Router) {}
+
+  ngOnInit() { }
+
   private email: string = '';
   public user: User = new User();
 
@@ -20,9 +24,6 @@ export class LoginComponent {
     email: new FormControl('', [Validators.required, Validators.pattern(this.emailPattern)]),
     password: new FormControl('', [Validators.required, Validators.minLength(6)]),
   })
-  
-  constructor(private fb: FormBuilder, private authService: AuthServiceService, private router: Router) {}
-  ngOnInit() { }
 
   isValidFiled(field: string): boolean | null {
     return this.loginForm.controls[field].errors && this.loginForm.controls[field].touched;

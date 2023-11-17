@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { lastValueFrom } from 'rxjs';
+import { BehaviorSubject, Observable, lastValueFrom } from 'rxjs';
 import { User } from '../models';
 import { ApiService } from './api.service';
 
@@ -9,34 +9,14 @@ import { ApiService } from './api.service';
 })
 export class AuthServiceService {
 
-  variableCompartida: boolean | undefined;
 
-  setVariable(valor: any){
-    this.variableCompartida= valor;
-  }
+  private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
-  getVariable(){
-    return this.variableCompartida;
+  get authStatus(): Observable<boolean> {
+    return this.isLoggedInSubject.asObservable();
   }
 
   constructor(private apiService: ApiService) { }
-
-  /*public async checkAuth(email:string, password: string): Promise<boolean>{
-
-    let users: User[] = [];
-
-    try{
-
-      let apiResponse =  this.apiService.getUserToAuth(email,password); // Recibo la respuesta de la api en forma de observable
-
-      users = await lastValueFrom(apiResponse);// Transformo el observable en una promesa y espero a que se resuelva con el await. Lo que me devuelve es el User[] porque asi se puso en el apiService
-
-    }catch(error){
-      console.log(error);
-    }
-
-    return users.length == 1;
-  }*/
 
   private user: User | null | undefined = null;
 
@@ -59,6 +39,7 @@ export class AuthServiceService {
 
       if (this.user) {
         localStorage.setItem('token', this.user.id!.toString());
+        this.isLoggedInSubject.next(true);
         isLogin = true;
       }
     } catch (error) {
@@ -68,14 +49,13 @@ export class AuthServiceService {
     return isLogin;
   }
 
-
   public logout(){
     this.user = undefined;
     localStorage.clear();
+    this.isLoggedInSubject.next(false);
   }
 
   public  static checkAuthentication(): boolean{
     return localStorage.getItem('token') ? true : false;
   }
-
 }

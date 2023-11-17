@@ -8,5 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LandingComponent {
 
+  ngOnInit(){
+    localStorage.clear();
+  }
 
 }

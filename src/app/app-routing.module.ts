@@ -6,12 +6,13 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { authGuard } from './core/services/guards/auth-guard';
 import { UserPageComponent } from './components/home-components/user-page/user-page.component';
+import { FavoritesPageComponent } from './components/home-components/favorites-page/favorites-page.component';
 
 
 const routes: Routes = [
   {
     path: 'landing',
-    component: LandingComponent
+    component: LandingComponent,
   },
   {
     path: 'home',
@@ -21,6 +22,10 @@ const routes: Routes = [
   {
     path: 'user',
     component: UserPageComponent
+  },
+  {
+    path: 'user/favorites',
+    component: FavoritesPageComponent
   },
   {
     path: 'login',

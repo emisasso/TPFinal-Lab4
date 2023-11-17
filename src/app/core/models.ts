@@ -67,7 +67,7 @@ export class User implements IUser{
     email: string = '';
     password: string = '';
     active: boolean = true;
-    favorites: IMovie[];
+    favorites: number[];
 
 
   constructor(user?:any){
@@ -76,7 +76,7 @@ export class User implements IUser{
     this.email = user == undefined ? '' : user.email;
     this.password = user == undefined ? '' : user.password;
     this.active = user == undefined ? false : user.active;
-    this.favorites = user == undefined ? undefined : user.favorites;
+    this.favorites = user == undefined ? null : user.favorites;
   }
 }
 

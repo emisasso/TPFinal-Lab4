@@ -10,6 +10,7 @@ import { HomeComponentComponent } from './components/home-components/home/home.c
 import { LandingComponent } from './components/landing/landing.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserPageComponent } from './components/home-components/user-page/user-page.component';
+import { FavoritesPageComponent } from './components/home-components/favorites-page/favorites-page.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { UserPageComponent } from './components/home-components/user-page/user-p
     LandingComponent,
     RegisterComponent,
     UserPageComponent,
+    FavoritesPageComponent,
   ],
   imports: [
     BrowserModule,

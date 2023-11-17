@@ -47,5 +47,5 @@ export interface IUser{
   email: string;
   password: string;
   active: boolean;
-  favorites: IMovie[];
+  favorites: number[];
 }
